@@ -1,19 +1,8 @@
 import helper.Contact;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        // Contact contact = new Contact();
-        // System.out.println(contact.perkalian(2, 5));
-        // mainMultiTable();
-        // mainMouthSize();
-        // mainDigitize();
-        // mainUpdateLight();
-        // DeretAritmatika da = new DeretAritmatika();
-        // System.out.println(da.aritmatika(4, 7));;
-        // mainSqureDigits();
-        // System.out.println(MakeUpperCase("hello"));
-        mainBetween();
-    }
+
+    private static final double DELTA = 1e-15;
 
     /**
      * Judul : Multiplication table for number
@@ -270,8 +259,76 @@ public class App {
     }
 
     public static void mainBetween(){
-        for(int i = 0; i < between(5, 10).length; i++){
-            System.out.print(i + " ");
+        // for(int i = 0; i < between(5, 10).length; i++){
+        //     System.out.print(i + " ");
+        // }
+        for(int nilai = 10; nilai >= 5; nilai--){
+            System.out.print(nilai + " ");
         }
+    }
+
+    public static int stringToNumber(String str){
+        return Integer.parseInt(str);
+    }
+
+    /**
+     * Tulis fungsi yang menghitung rata-rata angka dalam daftar yang diberikan.
+     * Catatan: Array kosong harus mengembalikan 0.
+     */
+    public static double find_average(int[] array){
+        double result = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array.length <= 0){
+                return 0;
+            }
+            result = result + array[i]; 
+        }
+        result = result / array.length;
+        return result;
+    }
+
+    /**
+     * Write a function called repeatStr which repeats the given string string exactly n times.
+     * @param repeat
+     * @param string
+     * @return
+     */
+    public static String repeatStr(final int repeat, final String string) {
+        
+        /**
+         * cara manual.
+         * authors : mohic, Pavel696, jcys, michal90r, nesseb, linlux, JCorwin, 1amobot, remdigga4237, seantitus (plus 416 more warriors)
+         * 
+        
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < repeat; i++) {
+            sb.append(string);
+        }
+
+        return sb.toString();
+
+        */
+
+        return string.repeat(repeat);
+    }
+
+    public static String dnaToRna(String dna){
+        String[] huruf = dna.split("");
+        /**
+         * link soal : https://www.codewars.com/kata/5556282156230d0e5e000089/train/java
+         * status : belum selesai
+         */
+        String result = "";
+        return result;
+    }
+
+    /**
+     * ----- Main Function -----
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) {
+        System.out.println(dnaToRna("UU"));
     }
 }
